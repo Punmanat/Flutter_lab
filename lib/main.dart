@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import './ui/first_screen.dart';
+import './ui/second_screen.dart';
+import './ui/detail_screen.dart';
+import './ui/my_custom_form.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,55 +16,58 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      // home: MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        "/" : (context) => MyCustomForm(),
+        "/second" : (context) => SecondScreen(),
+        "/detail" : (context) => DetailScreen(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Tabbar"),
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(icon: Icon(Icons.account_box),text: "account_box",),
-              Tab(icon: Icon(Icons.camera), text: "camera",),
-              Tab(icon: Icon(Icons.calendar_today),text:"Calendar")
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            Icon(Icons.account_box),
-            Icon(Icons.camera),
-            Icon(Icons.calendar_today),
-          ],
-        ),
-      ),
-    );
-  }
+// class MyHomePage extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     return DefaultTabController(
+//       length: 3,
+//       child: Scaffold(
+//         appBar: AppBar(
+//           title: Text("Tabbar"),
+//           bottom: TabBar(
+//             tabs: <Widget>[
+//               Tab(icon: Icon(Icons.account_box),text: "account_box",),
+//               Tab(icon: Icon(Icons.camera), text: "camera",),
+//               Tab(icon: Icon(Icons.calendar_today),text:"Calendar")
+//             ],
+//           ),
+//         ),
+//         body: TabBarView(
+//           children: <Widget>[
+//             Icon(Icons.account_box),
+//             Icon(Icons.camera),
+//             Icon(Icons.calendar_today),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
 
-}
+// }
 
-// class MyHomePage extends StatefulWidget {
+// class Counter extends StatefulWidget {
 //   @override
 //   State<StatefulWidget> createState() {
-//     return MyHomePageState();
+//     return CounterState();
 //   }
 // }
 
-// class MyHomePageState extends State<MyHomePage> {
+// class CounterState extends State<Counter> {
 //   int counter = 0;
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Hello, World....."),
-//       ),
 //       body: Center(
 //         child: Column(
 //           mainAxisAlignment: MainAxisAlignment.center,
