@@ -32,6 +32,7 @@ class MyCustomFormState extends State<MyCustomForm>{
                 hintText: "Enter your email"
               ),
               keyboardType: TextInputType.emailAddress,
+              onSaved: (value) => print(value),
               validator: (value){
                 if(value.isEmpty){
                   return "Please enter some text";
@@ -46,6 +47,7 @@ class MyCustomFormState extends State<MyCustomForm>{
               ),
               obscureText: true,
               keyboardType: TextInputType.emailAddress,
+              onSaved: (value) => print(value),
               validator: (value){
                 if(value.isEmpty){
                   return "Please enter some text";
@@ -56,10 +58,7 @@ class MyCustomFormState extends State<MyCustomForm>{
               padding: const EdgeInsets.all(15),
               child: RaisedButton(
                 onPressed: (){
-                  if(_formkey.currentState.validate()){
-                    Scaffold.of(context)
-                    .showSnackBar(SnackBar(content: Text("Processing Data")));
-                  }
+                  print(_formkey.currentState.validate());
                 },
                 child: Text("Submit"),
               ),
