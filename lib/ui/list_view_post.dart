@@ -10,6 +10,7 @@ class ListViewPosts extends StatelessWidget {
     // TODO: implement build
     return Container(
       child: ListView.builder(
+        itemCount: posts.length,
         itemBuilder: (BuildContext context, int index) {
           return Column(children: <Widget>[
             ListTile(
