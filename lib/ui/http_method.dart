@@ -15,7 +15,6 @@ class ListData extends StatelessWidget {
       posts.add(Post.formJson(d));
     });
 
-    print(posts[0]);
     return posts;
   }
 
