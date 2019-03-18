@@ -4,7 +4,7 @@ import 'package:lab01/model/post.dart';
 class ListViewPosts extends StatelessWidget {
   final List<Post> posts;
 
-  ListViewPosts({Key key, this.posts}) : super(key : key);
+  ListViewPosts({Key key, this.posts}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -12,19 +12,19 @@ class ListViewPosts extends StatelessWidget {
       child: ListView.builder(
         itemCount: posts.length,
         itemBuilder: (BuildContext context, int index) {
-          return Column(children: <Widget>[
-            ListTile(
-              title: Text(this.posts.elementAt(index).title),
-              subtitle: Text(this.posts.elementAt(index).body),
-              onTap: (){
-                print("Tab on ${this.posts.elementAt(index).id}");
-              },
+          return Column(
+            children: <Widget>[
+              ListTile(
+                title: Text(this.posts.elementAt(index).title),
+                subtitle: Text(this.posts.elementAt(index).body),
+                onTap: () {
+                  print("Tab on ${this.posts.elementAt(index).id}");
+                },
               )
-          ],);
+            ],
+          );
         },
-
       ),
     );
   }
-  
 }
