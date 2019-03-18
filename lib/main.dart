@@ -5,6 +5,7 @@ import './ui/detail_screen.dart';
 import './ui/my_custom_form.dart';
 import './ui/input_dropdown.dart';
 import './ui/http_method.dart';
+import './ui/todo_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(),
       initialRoute: '/',
       routes: {
-        "/" : (context) => ListData(),
-        "/second" : (context) => SecondScreen(),
-        "/detail" : (context) => DetailScreen(),
-        "/dropdown" : (context) => Dropdown(),
+        "/": (context) => TodoScreen(),
+        "/second": (context) => SecondScreen(),
+        "/detail": (context) => DetailScreen(),
+        "/dropdown": (context) => Dropdown(),
       },
     );
   }
