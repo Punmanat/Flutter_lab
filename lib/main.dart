@@ -6,6 +6,8 @@ import './ui/my_custom_form.dart';
 import './ui/input_dropdown.dart';
 import './ui/http_method.dart';
 import './ui/todo_screen.dart';
+import './ui/login_screen.dart';
+import './ui/register_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +24,8 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(),
       initialRoute: '/',
       routes: {
-        "/": (context) => TodoScreen(),
+        "/": (context) => LoginScreen(),
+        "/register": (context) => RegisterScreen(),
         "/second": (context) => SecondScreen(),
         "/detail": (context) => DetailScreen(),
         "/dropdown": (context) => Dropdown(),
